@@ -4,7 +4,8 @@
   "info": {
     "singularName": "product-page",
     "pluralName": "product-pages",
-    "displayName": "/products"
+    "displayName": "/projects",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -51,7 +52,7 @@
       "components": [
         "dynamic-zone.testimonials",
         "dynamic-zone.related-products",
-        "dynamic-zone.related-articles",
+        "dynamic-zone.related-projects",
         "dynamic-zone.pricing",
         "dynamic-zone.launches",
         "dynamic-zone.how-it-works",

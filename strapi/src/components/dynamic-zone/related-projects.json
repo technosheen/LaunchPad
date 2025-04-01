@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_dynamic_zone_related_articles",
+  "collectionName": "components_dynamic_zone_related_project",
   "info": {
-    "displayName": "related_articles",
+    "displayName": "related_project",
     "icon": "bulletList",
     "description": ""
   },
@@ -13,10 +13,10 @@
     "sub_heading": {
       "type": "string"
     },
-    "articles": {
+    "projects": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::article.article"
+      "target": "api::project.project"
     }
   }
 }

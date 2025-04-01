@@ -59,7 +59,7 @@ We're almost ready for lift-off! Next.js is your sleek, futuristic interface for
 Navigate to your `./my-projects/launchpad/next` folder by running `cd next` from your command line.
 
 - Run the following command in your `./launchpad/next` folder
-
+y
 ```
 yarn && yarn build && yarn start
 ```
@@ -101,7 +101,7 @@ This installs dependencies, builds your project, and starts your server. You’r
 - [ ] Implement the official Strapi SEO plugin
 - [ ] Implement the community Strapi preview plugin
 - [ ] Create localized content for the pricing plans and products
-- [ ] Populate creator fields when it'll work on Strapi 5 (article authors information are missing)
+- [ ] Populate creator fields when it'll work on Strapi 5 (project authors information are missing)
 
 ## Customization
 

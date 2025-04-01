@@ -7,7 +7,7 @@ export interface Image {
   alternativeText: string;
 }
 
-export interface Article {
+export interface Project {
   title: string;
   description: string;
   slug: string;

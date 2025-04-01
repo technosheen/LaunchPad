@@ -197,20 +197,6 @@ export interface DynamicZonePricing extends Struct.ComponentSchema {
   };
 }
 
-export interface DynamicZoneRelatedArticles extends Struct.ComponentSchema {
-  collectionName: 'components_dynamic_zone_related_articles';
-  info: {
-    description: '';
-    displayName: 'related_articles';
-    icon: 'bulletList';
-  };
-  attributes: {
-    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
-    heading: Schema.Attribute.String;
-    sub_heading: Schema.Attribute.String;
-  };
-}
-
 export interface DynamicZoneRelatedProducts extends Struct.ComponentSchema {
   collectionName: 'components_dynamic_zone_related_products';
   info: {
@@ -219,7 +205,20 @@ export interface DynamicZoneRelatedProducts extends Struct.ComponentSchema {
   };
   attributes: {
     heading: Schema.Attribute.String;
-    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
+    sub_heading: Schema.Attribute.String;
+  };
+}
+
+export interface DynamicZoneRelatedProjects extends Struct.ComponentSchema {
+  collectionName: 'components_dynamic_zone_related_project';
+  info: {
+    description: '';
+    displayName: 'related_project';
+    icon: 'bulletList';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    projects: Schema.Attribute.Relation<'oneToMany', 'api::project.project'>;
     sub_heading: Schema.Attribute.String;
   };
 }
@@ -270,6 +269,24 @@ export interface GlobalNavbar extends Struct.ComponentSchema {
     left_navbar_items: Schema.Attribute.Component<'shared.link', true>;
     logo: Schema.Attribute.Relation<'oneToOne', 'api::logo.logo'>;
     right_navbar_items: Schema.Attribute.Component<'shared.link', true>;
+  };
+}
+
+export interface GlobalOpenGraph extends Struct.ComponentSchema {
+  collectionName: 'components_global_open_graphs';
+  info: {
+    displayName: 'OpenGraph';
+    icon: 'code';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    ogImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    ogLocale: Schema.Attribute.String;
+    ogType: Schema.Attribute.String;
+    ogUrl: Schema.Attribute.String;
+    twitter_image: Schema.Attribute.String;
+    twitterCard: Schema.Attribute.String;
+    twitterUrl: Schema.Attribute.String;
   };
 }
 
@@ -441,6 +458,7 @@ export interface SharedSection extends Struct.ComponentSchema {
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
+    description: '';
     displayName: 'seo';
     icon: 'search';
   };
@@ -460,6 +478,8 @@ export interface SharedSeo extends Struct.ComponentSchema {
         maxLength: 60;
       }>;
     metaViewport: Schema.Attribute.String;
+    og: Schema.Attribute.Component<'global.open-graph', false>;
+    statusCode: Schema.Attribute.Integer;
     structuredData: Schema.Attribute.JSON;
   };
 }
@@ -521,11 +541,12 @@ declare module '@strapi/strapi' {
       'dynamic-zone.how-it-works': DynamicZoneHowItWorks;
       'dynamic-zone.launches': DynamicZoneLaunches;
       'dynamic-zone.pricing': DynamicZonePricing;
-      'dynamic-zone.related-articles': DynamicZoneRelatedArticles;
       'dynamic-zone.related-products': DynamicZoneRelatedProducts;
+      'dynamic-zone.related-projects': DynamicZoneRelatedProjects;
       'dynamic-zone.testimonials': DynamicZoneTestimonials;
       'global.footer': GlobalFooter;
       'global.navbar': GlobalNavbar;
+      'global.open-graph': GlobalOpenGraph;
       'items.graph-card-top-items': ItemsGraphCardTopItems;
       'items.input': ItemsInput;
       'items.left-navbar-items': ItemsLeftNavbarItems;

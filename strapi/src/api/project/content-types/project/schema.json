@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "articles",
+  "collectionName": "projects",
   "info": {
-    "singularName": "article",
-    "pluralName": "articles",
-    "displayName": "Articles",
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Projects",
     "description": ""
   },
   "options": {
@@ -63,7 +63,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::category.category",
-      "inversedBy": "articles"
+      "inversedBy": "projects"
     },
     "dynamic_zone": {
       "pluginOptions": {
@@ -73,7 +73,7 @@
       },
       "type": "dynamiczone",
       "components": [
-        "dynamic-zone.related-articles",
+        "dynamic-zone.related-projects",
         "dynamic-zone.cta"
       ]
     },

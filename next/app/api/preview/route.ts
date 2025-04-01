@@ -27,7 +27,7 @@ export const GET = async (request: Request) => {
     } else {
       slugToReturn = `/${locale}`;
     }
-  } else if (contentType === 'article' || contentType?.includes('blog')) {
+  } else if (contentType === 'project' || contentType?.includes('blog')) {
     slugToReturn = `/${locale}/blog${slug ? `/${slug}` : ''}`;
   } else if (contentType?.includes('product')) {
     slugToReturn = `/en/products${slug ? `/${slug}` : ''}`;

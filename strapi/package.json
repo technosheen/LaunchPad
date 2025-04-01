@@ -1,8 +1,8 @@
 {
-  "name": "strapi",
+  "name": "technosheenlaunch",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application",
+  "description": "technosheen agency website",
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
@@ -36,7 +36,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "LAUNCHPAD"
+    "uuid": "LAUNCHPAD-LOCAL-84d18c90-6385-472c-b294-f6db176c0f2b"
   },
   "engines": {
     "node": ">=18.0.0 <=20.x.x",

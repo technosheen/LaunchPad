@@ -9,7 +9,7 @@ import { IconClipboardText } from "@tabler/icons-react";
 import { BlogPostRows } from "@/components/blog-post-rows";
 import { AmbientColor } from "@/components/decorations/ambient-color";
 import fetchContentType from "@/lib/strapi/fetchContentType";
-import { Article } from "@/types/types";
+import { Project } from "@/types/types";
 import { generateMetadataObject } from '@/lib/shared/metadata';
 
 import ClientSlugHandler from "../ClientSlugHandler";
@@ -37,7 +37,7 @@ export default async function Blog({
   const blogPage = await fetchContentType('blog-page', {
     filters: { locale: params.locale },
   }, true)
-  const articles = await fetchContentType('articles', {
+  const projects = await fetchContentType('projects', {
     filters: { locale: params.locale },
   }, false)
 
@@ -66,11 +66,11 @@ export default async function Blog({
           </Subheading>
         </div>
 
-        {articles.data.slice(0, 1).map((article: Article) => (
-          <BlogCard article={article} locale={params.locale} key={article.title} />
+        {projects.data.slice(0, 1).map((project: Project) => (
+          <BlogCard project={project} locale={params.locale} key={project.title} />
         ))}
 
-        <BlogPostRows articles={articles.data} />
+        <BlogPostRows projects={projects.data} />
       </Container>
     </div>
   );

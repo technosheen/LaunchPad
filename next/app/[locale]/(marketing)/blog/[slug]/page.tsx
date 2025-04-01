@@ -11,8 +11,8 @@ export default async function SingleArticlePage({
 }: {
   params: { slug: string; locale: string };
 }) {
-  const article = await fetchContentType(
-    "articles",
+  const project = await fetchContentType(
+    "projects",
     {
       filters: {
         slug: params.slug,
@@ -22,11 +22,11 @@ export default async function SingleArticlePage({
     true,
   );
 
-  if (!article) {
+  if (!project) {
     return <div>Blog not found</div>;
   }
 
-  const localizedSlugs = article.localizations?.reduce(
+  const localizedSlugs = project.localizations?.reduce(
     (acc: Record<string, string>, localization: any) => {
       acc[localization.locale] = localization.slug;
       return acc;
@@ -35,9 +35,9 @@ export default async function SingleArticlePage({
   );
 
   return (
-    <BlogLayout article={article} locale={params.locale}>
+    <BlogLayout project={project} locale={params.locale}>
       <ClientSlugHandler localizedSlugs={localizedSlugs} />
-      <BlocksRenderer content={article.content} />
+      <BlocksRenderer content={project.content} />
     </BlogLayout>
   );
 }
