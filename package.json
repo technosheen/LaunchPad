@@ -1,7 +1,7 @@
 {
-  "name": "strapi-next-launchpad-example",
+  "name": "technosheen-launchpad",
   "version": "1.0.0",
-  "description": "Next.js Launchpad Example powered by Strapi",
+  "description": "Next.js Agency Website Launchpad powered by Strapi",
   "type": "module",
   "scripts": {
     "next": "yarn dev --prefix ../next/",
